@@ -4,24 +4,18 @@ import "./App.css";
 import CardWrapper from "./CardWrapper";
 
 function App() {
-  const cardContainer = cardData.map((item) => (
+  const cardContainer = cardData.map((card) => (
     <Cardcomp
-      key={item.id}
-      id={item.id}
-      subscription={item.subscription}
-      price={item.price}
-      userLimit={item.userLimit}
-      storage={item.storage}
-      publicProjects={item.publicProjects}
-      access={item.access}
-      privateProjects={item.privateProjects}
-      phoneSupport={item.phoneSupport}
-      subdomain={item.subdomain}
-      statusReports={item.statusReports}
+      key={card.id}
+      card={card}
     />
   ));
 
-  return <CardWrapper>{cardContainer}</CardWrapper>;
+  return (
+    <CardWrapper className="container d-flex flex-wrap justify-content-center mt-5">
+      {cardContainer}
+    </CardWrapper>
+  );
 }
 
 export default App;

@@ -1,9 +1,15 @@
-/* eslint-disable react/prop-types */
+import propTypes from "prop-types";
 
-function CardWrapper(props) {
-    return <div className="container d-flex flex-wrap justify-content-center mt-5">
-        {props.children}
+CardWrapper.propTypes = {
+    children: propTypes.node
+}
+
+function CardWrapper({ children }) {
+  return (
+    <div className="container d-flex flex-wrap justify-content-center mt-5">
+      {children}
     </div>
+  );
 }
 
 export default CardWrapper;
